@@ -1,0 +1,6 @@
+# Core PCG dependency
+deap>=1.4.1
+
+# Useful extras for testing and analysis
+numpy>=1.24.0
+matplotlib>=3.7.0   # plot fitness curves during GA runs

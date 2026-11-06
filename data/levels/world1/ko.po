@@ -1,0 +1,458 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the SuperTux package.
+# 
+# Translators:
+# Go Nam Hyeon <gnh1201@gmail.com>, 2021,2026
+# Junghee Lee <daemul72@gmail.com>, 2022
+# Junghee Lee <daemul72@gmail.com>, 2022
+# Myeongjin <aranet100@gmail.com>, 2016-2017,2019,2021
+# Roland Kim <dyn4micwork@gmail.com>, 2014-2015
+msgid ""
+msgstr ""
+"Project-Id-Version: SuperTux\n"
+"Report-Msgid-Bugs-To: https://github.com/SuperTux/supertux/issues\n"
+"POT-Creation-Date: 2026-09-20 00:29+0000\n"
+"PO-Revision-Date: 2013-08-10 22:58+0000\n"
+"Last-Translator: Junghee Lee <daemul72@gmail.com>, 2022\n"
+"Language-Team: Korean (http://app.transifex.com/arctic-games/supertux/language/ko/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ko\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: data/levels/world1/23rd_airborne.stl:3
+msgid "23rd Airborne"
+msgstr "하늘23번길"
+
+#: data/levels/world1/above_arctic_skies.stl:3
+msgid "Above the Antarctic Skies"
+msgstr "남극 하늘 위에서"
+
+#: data/levels/world1/above_arctic_skies.stl:339
+msgid ""
+"-Air Flower\n"
+"!images/powerups/airflower/air_flower-0.png\n"
+"#The Air Flower lets Tux move much quicker and jump higher. It grants the ability to glide in the air for a few seconds by holding the JUMP Key after a jump."
+msgstr "-에어 플라워\n!images/powerups/airflower/air_flower-0.png\n#에어 플라워는 턱스를 더 빠르게 움직이고 더 높이 점프할 수 있게 해 줍니다. 점프 후 점프 키를 누르고 있으면 공중에서 몇 초간 활강할 수 있습니다."
+
+#: data/levels/world1/antarctic_outpost.stl:3
+msgid "Antarctic Outpost"
+msgstr "남극 기지"
+
+#: data/levels/world1/between_glaciers.stl:3
+msgid "Between Two Glaciers"
+msgstr "두 빙하 사이"
+
+#: data/levels/world1/bouncy_mountainside.stl:3
+msgid "Bouncy, Bouncy Mountainside"
+msgstr "폴짝폴짝 산비탈"
+
+#: data/levels/world1/castle_cutscene.stl:3
+msgid "Nobody Home"
+msgstr "아무도 없네"
+
+#: data/levels/world1/castle_of_nolok.stl:3
+msgid "The Castle of Nolok"
+msgstr "놀록의 성"
+
+#: data/levels/world1/crystal_mine.stl:3
+msgid "The Crystal Mine"
+msgstr "크리스탈 광산"
+
+#: data/levels/world1/deep_dive_chill.stl:3
+msgid "Deep Dive 'n' Chill"
+msgstr "깊은 잠수와 휴식"
+
+#: data/levels/world1/end_of_tunnel.stl:3
+msgid "End of the Tunnel"
+msgstr "터널의 끝"
+
+#: data/levels/world1/entrance_cave.stl:3
+msgid "Entrance to the Cave"
+msgstr "동굴 입구"
+
+#: data/levels/world1/fork_in_the_road.stl:3
+msgid "A Fork in the Road?"
+msgstr "갈림길이잖아?"
+
+#: data/levels/world1/fork_in_the_road.stl:776
+msgid ""
+"-Secret Exit\n"
+"#Levels can sometimes house a secret exit that will reveal a hidden, alternate path! So keep an eye out for suspicious spots on the worldmap."
+msgstr "-비밀 출구\n#레벨에는 숨겨진 대체 경로를 드러내는 비밀 출구가 있을 수 있습니다! 월드맵에서 수상한 장소를 잘 살펴보세요."
+
+#: data/levels/world1/frosted_fields.stl:3
+msgid "The Frosted Fields"
+msgstr "서리가 내린 들판"
+
+#: data/levels/world1/ice_in_the_hole.stl:3
+msgid "Ice in the Hole"
+msgstr "구멍 속 얼음"
+
+#: data/levels/world1/info:2 data/levels/world1/worldmap.stwm:4
+msgid "Icy Island"
+msgstr "얼음 섬"
+
+#: data/levels/world1/info:3
+msgid "Where your adventure begins."
+msgstr "당신의 모험이 시작되는 곳."
+
+#: data/levels/world1/into_stars.stl:3
+msgid "Into the Stars"
+msgstr "별 속으로"
+
+#: data/levels/world1/intro.stl:3
+msgid "Picnic With Penny"
+msgstr "페니와의 소풍"
+
+#: data/levels/world1/journey_begins.stl:3
+msgid "The Journey Begins"
+msgstr "여정의 시작"
+
+#: data/levels/world1/journey_begins.stl:166
+#: data/levels/world1/stone_cold.stl:269 data/levels/world1/worldmap.stwm:248
+msgid "You found a secret area!"
+msgstr "비밀 구역을 찾았어요!"
+
+#: data/levels/world1/living_inside_fridge.stl:3
+msgid "Living In A Fridge"
+msgstr "냉장고에서의 삶"
+
+#: data/levels/world1/more_snowballs.stl:3
+msgid "Oh No! More Snowballs!"
+msgstr "안돼! 눈덩이가 너무 많아!"
+
+#: data/levels/world1/more_snowballs.stl:319
+msgid ""
+"-Carrying Objects\n"
+"#Tux can pick up objects by holding the ACTION key. Release the ACTION key while standing still to drop the object.\n"
+"#If you let go of the ACTION key while Tux is moving, he will throw it!"
+msgstr "-물건 들기\n#ACTION 키를 길게 눌러 턱스가 물건을 집어 들 수 있습니다. 가만히 서서 ACTION 키를 놓으면 물건을 내려놓습니다.\n#움직이는 중에 ACTION 키를 놓으면 던집니다!"
+
+#: data/levels/world1/more_snowballs.stl:328
+msgid ""
+"-Up-Throwing\n"
+"#Tux can throw most objects upwards, by holding the UP key whilst releasing the ACTION key.\n"
+"#When running, Tux throws the object in an arch!"
+msgstr "-위로 던지기\n#ACTION 키를 놓으면서 위쪽 키를 누르면 대부분의 물건을 위로 던질 수 있습니다.\n#달리는 중에는 포물선 형태로 던집니다!"
+
+#: data/levels/world1/night_chill.stl:3
+msgid "Night Chill"
+msgstr "밤의 한기"
+
+#: data/levels/world1/or_just_me.stl:3
+msgid "...Or Is It Just Me?"
+msgstr "...아니면 나 혼자야?"
+
+#: data/levels/world1/path_in_clouds.stl:3
+msgid "A Path in the Clouds"
+msgstr "구름 속 길"
+
+#: data/levels/world1/scripts_castle_cutscene.txt:2
+msgid "At last, Tux managed to rush towards the final room of the icy castle."
+msgstr "마침내, 턱스는 얼음성의 마지막 방으로 진격했다."
+
+#: data/levels/world1/scripts_castle_cutscene.txt:3
+msgid ""
+"To his suprise, there was no one here. Neither Penny, nor this... strange "
+"Nolok guy."
+msgstr "놀랍게도 아무도 없었다. 페니도... 그 놀록이라는 작자도."
+
+#: data/levels/world1/scripts_castle_cutscene.txt:4
+msgid "Surely they had to be here somewhere, right? Perhaps a hidden room?"
+msgstr "분명 어딘가에 있을 거야, 그렇지? 숨겨진 방이 있나?"
+
+#: data/levels/world1/scripts_castle_cutscene.txt:5
+msgid ""
+"After a bit of back and forth with himself, Tux noticed a small note "
+"attached to one of the pillars."
+msgstr "잠시 고민하던 턱스는 기둥 중 하나에 붙어 있던 쪽지를 발견했다."
+
+#: data/levels/world1/scripts_castle_cutscene.txt:6
+msgid "It was yet another note, by that Nolok."
+msgstr "그 놀록이라는 작자가 쓴 또 다른 쪽지였다."
+
+#: data/levels/world1/scripts_castle_cutscene.txt:7
+msgid ""
+"It read that he had already left Icy Island towards the far north. If he "
+"wished to follow him and save his beloved friend, he would have to come to "
+"the Crystal Mine."
+msgstr "그가 이미 얼음 섬을 떠나 먼 북쪽으로 향했다는 내용이었다. 사랑하는 친구를 구하고 싶으면 크리스탈 광산으로 오라는 부언과 함께."
+
+#: data/levels/world1/scripts_castle_cutscene.txt:8
+msgid ""
+"Marked below was a rough map of the Glacier Isle, showing a boat and some "
+"kind of small pier on the other end."
+msgstr "아래에는 빙하 섬의 대략적인 지도가 표시되어 있고, 반대편 끝에는 배 한 척과 작은 부두 같은 것이 그려져 있었다."
+
+#: data/levels/world1/scripts_castle_cutscene.txt:9
+msgid ""
+"But before Tux could even make sense of any of it, a load roar filled the "
+"room!"
+msgstr "하지만 턱스가 그 내용을 이해하기도 전에, 큰 포성이 방 안을 가득 채웠다!"
+
+#: data/levels/world1/scripts_castle_cutscene.txt:10
+msgid ""
+"The mighty Yeti had made his appearence, busting his chest in an "
+"intimidating fashion!"
+msgstr "강력한 예티가 등장하여, 위협적인 자세로 가슴을 두드리고 있었다!"
+
+#: data/levels/world1/scripts_castle_cutscene.txt:11
+msgid ""
+"Tux made his way towards a balcony on the other end of the room. With no "
+"other option, he jumped!"
+msgstr "턱스는 방 반대편의 발코니를 향해 달려갔다. 다른 방법이 없어, 뛰어내렸다!"
+
+#: data/levels/world1/scripts_castle_cutscene.txt:12
+msgid "Unfortunately, the Yeti would not let him go so easily..."
+msgstr "안타깝게도, 예티는 그를 쉽게 놓아주지 않았다..."
+
+#: data/levels/world1/scripts_crystal_mine.txt:2
+msgid ""
+"After a long swim across the antarctic waters, Tux arrived at the Glacier "
+"Isle mentioned in Nolok's note."
+msgstr "남극 해안을 따라 긴 수영 끝에, 턱스는 놀록의 쪽지에 언급된 빙하 섬에 도착했다."
+
+#: data/levels/world1/scripts_crystal_mine.txt:3
+msgid ""
+"A massive shaft lay before him, leading down into the aforementioned Crystal"
+" Mine."
+msgstr "앞으로 거대한 갱도가 펼쳐져 있었고, 그 앞서 말한 크리스탈 광산으로 이어지고 있었다."
+
+#: data/levels/world1/scripts_crystal_mine.txt:4
+msgid ""
+"Still carrying a spark of doubt that this was not a trap, Tux slowly "
+"descended into the depths once more..."
+msgstr "이것이 함정이 아닐까 하는 의심을 품은 채, 턱스는 다시 한번 깊은 곳으로 천천히 내려갔다..."
+
+#: data/levels/world1/scripts_crystal_mine.txt:5
+msgid ""
+"At last, Tux made it through the crystal mine and found himself on the "
+"opposite end of the Glacier Isle."
+msgstr "마침내, 턱스는 크리스탈 광산을 통과하여 빙하 섬의 반대편에 도착했다."
+
+#: data/levels/world1/scripts_crystal_mine.txt:6
+msgid ""
+"As he was about to exit the mine, Tux was internally hoping that all Nolok "
+"wrote in the note was true."
+msgstr "광산을 나서려 할 때, 턱스는 놀록이 쪽지에 쓴 것이 모두 사실이기를 속으로 바랐다."
+
+#: data/levels/world1/scripts_crystal_mine.txt:7
+msgid ""
+"To his relief, he did find a boat still docked. With it, he could sail up "
+"north, to find Nolok and save Penny."
+msgstr "다행히도, 아직 정박해 있는 배를 발견했다. 그 배로 북쪽으로 항해하여 놀록을 찾고 페니를 구할 수 있었다."
+
+#: data/levels/world1/scripts_crystal_mine.txt:8
+msgid "It seemed the map in the note wasn't a trap after all."
+msgstr "쪽지 속 지도는 결국 함정이 아니었던 것 같다."
+
+#: data/levels/world1/scripts_crystal_mine.txt:9
+msgid ""
+"The more he thought about it, the less he was sure about Nolok's "
+"motivations. Why would he leave clues behind?"
+msgstr "생각할수록 놀록의 동기가 확실하지 않았다. 왜 단서를 남긴 것일까?"
+
+#: data/levels/world1/scripts_default.txt:2
+msgid "---Insert Cutscene Here---"
+msgstr "---여기에 컷신을 넣으세요---"
+
+#: data/levels/world1/scripts_intro.txt:2
+msgid "Somewhere at the shores of Antarctica..."
+msgstr "남극의 어느 해안가에서..."
+
+#: data/levels/world1/scripts_intro.txt:3
+msgid "Tux the penguin was going to meet his friend, Penny, for a picnic."
+msgstr "펭귄 턱스는 친구 페니를 만나 소풍을 가려고 했습니다."
+
+#: data/levels/world1/scripts_intro.txt:4
+msgid "Tux woke up, dizzy, to find that Penny was missing!"
+msgstr "어지러운 채 깨어난 턱스는 페니가 없어졌다는 것을 알았습니다!"
+
+#: data/levels/world1/scripts_intro.txt:5
+msgid "Tux was starting to become worried. He then saw a letter, and it read:"
+msgstr "턱스는 걱정이 되었습니다. 그곳에 편지가 남겨져 있었습니다."
+
+#: data/levels/world1/scripts_intro.txt:6
+msgid ""
+"\"Tux, I have kidnapped your beloved Penny and have taken her to my "
+"fortress.\""
+msgstr "\"턱스, 내가 너의 사랑하는 페니를 납치해서 내 요새로 데려갔지.\""
+
+#: data/levels/world1/scripts_intro.txt:7
+msgid "\"The path to my fortress is littered with my minions.\""
+msgstr "\"내 요새로 가는 길에는 내 쫄따구들이 깔려 있어.\""
+
+#: data/levels/world1/scripts_intro.txt:8
+msgid "\"You don't have a chance of saving her! Signed, Nolok.\""
+msgstr "\"그녀를 구할 가능성은 없단 말이야! - 놀록\""
+
+#: data/levels/world1/scripts_intro.txt:9
+msgid ""
+"Realizing the trouble Penny could be in, Tux became determined to save her."
+msgstr "페니가 곤경에 처할 수 있다는 것을 깨달은 턱스는 그녀를 구하기로 결심했습니다."
+
+#: data/levels/world1/scripts_intro.txt:10
+msgid ""
+"Then, Tux saw Nolok's castle in the distance and set off to rescue Penny!"
+msgstr "이윽고, 턱스는 멀리 놀록의 성을 바라보며 페니를 구하기 위해 출발했습니다!"
+
+#: data/levels/world1/scripts_yeti_cutscene.txt:2
+msgid ""
+"After an entire day of navigating Icy Island, Tux had now almost reached the"
+" supposed castle of Nolok."
+msgstr "얼음 섬을 하루 종일 횡단한 끝에, 턱스는 놀록의 성으로 추정되는 곳에 거의 다다랐다."
+
+#: data/levels/world1/scripts_yeti_cutscene.txt:3
+msgid ""
+"The lack of sleep during the night may not have been ideal but he was "
+"determined to keep going!"
+msgstr "밤새 잠을 못 잔 것은 이상적이지 않았지만, 그는 계속 나아가기로 결심했다!"
+
+#: data/levels/world1/scripts_yeti_cutscene.txt:4
+msgid ""
+"Not wanting to waste any more time, Tux continued on, sliding down the hill "
+"he was on into the icy valley up ahead."
+msgstr "더 이상 시간을 낭비하고 싶지 않아, 턱스는 언덕을 미끄러져 내려가 앞의 얼어붙은 계곡으로 향했다."
+
+#: data/levels/world1/scripts_yeti_cutscene.txt:5
+msgid ""
+"Unbeknownst to him, a Yeti seemed very keen on his presence as he kept a "
+"close eye on Tux as he continued his journey."
+msgstr "턱스는 모르고 있었지만, 예티가 그의 존재에 큰 관심을 갖고 여정을 계속하는 턱스를 주시하고 있었다."
+
+#: data/levels/world1/scripts_yeti_cutscene.txt:6
+msgid ""
+"The yeti let out a loud roar and proceeded to follow the little penguin."
+msgstr "예티는 큰 포성을 지르며 작은 펭귄을 뒤따르기 시작했다."
+
+#: data/levels/world1/scripts_yetiwin_cutscene.txt:2
+msgid "He did it! He actually did it! Tux had beaten the mighty yeti!"
+msgstr "해냈다! 정말로 해냈다! 턱스가 강력한 예티를 쓰러뜨렸다!"
+
+#: data/levels/world1/scripts_yetiwin_cutscene.txt:3
+msgid ""
+"While it did not take long for the yeti to get up again, to Tux's relief, he"
+" did not throw hands again."
+msgstr "예티가 금방 다시 일어났지만, 다행히도 다시 공격하지는 않았다."
+
+#: data/levels/world1/scripts_yetiwin_cutscene.txt:4
+msgid ""
+"The yeti was furious however! He could not understand how a tiny penguin "
+"like Tux could have beaten him in a fight."
+msgstr "하지만 예티는 격노했다! 어떻게 턱스 같은 작은 펭귄이 자신을 이길 수 있었는지 이해할 수 없었다."
+
+#: data/levels/world1/scripts_yetiwin_cutscene.txt:5
+msgid ""
+"Almost as if he forgot Tux was there to begin with, the yeti rushed off, "
+"grumbling to himself."
+msgstr "마치 턱스가 처음부터 거기 없었던 것처럼, 예티는 투덜거리며 서둘러 떠났다."
+
+#: data/levels/world1/scripts_yetiwin_cutscene.txt:6
+msgid "Not sure what to make of it, Tux decided to continue moving onwards."
+msgstr "어떻게 해석해야 할지 몰랐지만, 턱스는 계속 앞으로 나아가기로 했다."
+
+#: data/levels/world1/scripts_yetiwin_cutscene.txt:7
+msgid ""
+"As he reached the shore, Tux could already see the Glacier Isle on the "
+"horizon."
+msgstr "해안에 도달하자, 턱스는 이미 수평선 너머 빙하 섬을 볼 수 있었다."
+
+#: data/levels/world1/scripts_yetiwin_cutscene.txt:8
+msgid ""
+"If he knew Nolok went over there sooner, he could have been there much "
+"faster."
+msgstr "놀록이 그곳으로 갔다는 것을 미리 알았다면, 훨씬 빨리 도착할 수 있었을 텐데."
+
+#: data/levels/world1/scripts_yetiwin_cutscene.txt:9
+msgid "Perhaps that was Nolok's goal with the note he left behind..."
+msgstr "아마도 그것이 놀록이 쪽지를 남긴 목적이었을지도 모른다..."
+
+#: data/levels/world1/scripts_yetiwin_cutscene.txt:10
+msgid ""
+"Tux: The thing over there must be the\n"
+"     crystal mine the Yeti was talking\n"
+"     about."
+msgstr ""
+
+#: data/levels/world1/shattered_bridge.stl:3
+msgid "Shattered Bridge"
+msgstr "산산조각 난 다리"
+
+#: data/levels/world1/slippery_slide.stl:3
+msgid "Slippery Slide"
+msgstr "미끄러운 슬라이드"
+
+#: data/levels/world1/somewhat_smaller_bath.stl:3
+msgid "The Somewhat Smaller Bath"
+msgstr "조금 더 작은 목욕탕"
+
+#: data/levels/world1/somewhat_smaller_bath.stl:422
+msgid ""
+"-Swimming\n"
+"!images/creatures/tux/big/swim-1.png\n"
+"#When submerged in water, use the DIRECTIONAL keys to swim around freely. Hold the JUMP key to swim even faster."
+msgstr "-수영\n!images/creatures/tux/big/swim-1.png\n#물에 잠기면, 방향 키를 사용하여 자유롭게 헤엄칠 수 있습니다. 점프 키를 누르면 더 빠르게 헤엄칠 수 있습니다."
+
+#: data/levels/world1/stone_cold.stl:3
+msgid "Stone Cold"
+msgstr "얼음골"
+
+#: data/levels/world1/stone_cold.stl:200
+msgid ""
+"-Carrying Objects\n"
+"#Tux can pick up objects by holding the ACTION key. Release the ACTION key to drop the object.\n"
+"#If you let go of the ACTION key while Tux is moving, he will throw it!"
+msgstr "-물건 들기\n#ACTION 키를 길게 눌러 턱스가 물건을 집어 들 수 있습니다. ACTION 키를 놓으면 물건을 내려놓습니다.\n#움직이는 중에 ACTION 키를 놓으면 던집니다!"
+
+#: data/levels/world1/stone_cold.stl:209
+msgid ""
+"-Up-Throwing\n"
+"#Tux can throw most objects upwards by holding the UP key, whilst releasing the ACTION key.\n"
+"#When running, Tux throws the object in an arch!"
+msgstr "-위로 던지기\n#ACTION 키를 놓으면서 위쪽 키를 누르면 대부분의 물건을 위로 던질 수 있습니다.\n#달리는 중에는 포물선 형태로 던집니다!"
+
+#: data/levels/world1/under_the_ice.stl:3
+msgid "Under the Ice"
+msgstr "얼음 아래로"
+
+#: data/levels/world1/welcome_antarctica.stl:3
+msgid "Welcome to Antarctica"
+msgstr "남극에 오신 것을 환영합니다"
+
+#: data/levels/world1/welcome_antarctica.stl:117
+msgid ""
+"-Eggs\n"
+"!images/powerups/egg/egg-shade.png\n"
+"#The egg makes Tux grow larger. Tux can then smash wooden blocks with his head."
+msgstr "-알\n!images/powerups/egg/egg-shade.png\n#알은 턱스를 더 크게 해 줍니다. 턱스는 머리로 나무 상자를 깰 수 있습니다."
+
+#: data/levels/world1/welcome_antarctica.stl:126
+msgid ""
+"-Fire Flower\n"
+"!images/powerups/fireflower/fire_flower-0.png\n"
+"#The fire flower gives Tux the ability to shoot fireballs."
+msgstr "-불꽃 플라워\n!images/powerups/fireflower/fire_flower-0.png\n#불꽃 플라워는 턱스에게 파이어볼을 쏘는 능력을 줍니다."
+
+#: data/levels/world1/welcome_antarctica.stl:135
+msgid ""
+"-Tux Doll\n"
+"!images/powerups/1up/1up.png\n"
+"#Tux Dolls are a rare collectible which are needed to unlock the Bonus Islands!\n"
+"\n"
+"#Collect all of them to unlock fun, additional levels!"
+msgstr "-턱스 인형\n!images/powerups/1up/1up.png\n#턱스 인형은 보너스 섬을 해제하기 위해 필요한 희귀 수집품입니다!\n\n#모두 모아서 재미있는 추가 레벨을 해제하세요!"
+
+#: data/levels/world1/yeti_boss.stl:3
+msgid "No More Mr. Ice Guy"
+msgstr "이제 더 이상의 차도남은 없어"
+
+#: data/levels/world1/yeti_cutscene.stl:3
+msgid "An Unsuspected Follower"
+msgstr "뜻밖의 추격자"
+
+#: data/levels/world1/yetiwin_cutscene.stl:3
+msgid "Off to the Glacier Isles"
+msgstr "빙하 섬을 향하여"

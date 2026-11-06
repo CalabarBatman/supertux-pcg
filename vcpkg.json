@@ -1,0 +1,55 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
+  "dependencies": [
+    "fmt",
+    "libogg",
+    "libvorbis",
+    "freetype",
+    "physfs",
+    "sdl3",
+    {
+      "name": "sdl3-image",
+      "features": ["jpeg", "png"]
+    },
+    {
+      "name": "sdl3-ttf",
+      "features": ["harfbuzz"]
+    },
+    "glm",
+    "libpng",
+    "zlib"
+  ],
+  "features": {
+    "nonwasm": {
+      "description": "Add dependencies that aren't needed for WebAssembly",
+      "dependencies": [
+        "curl",
+        "openal-soft",
+        "libraqm"
+      ],
+      "supports": "!emscripten"
+    },
+    "glew": {
+      "description": "Use glew for OpenGL support",
+      "dependencies": [
+        "glew"
+      ],
+      "supports": "!(android | emscripten)"
+    },
+    "libepoxy": {
+      "description": "Use libepoxy for OpenGL support",
+      "dependencies": [
+        "libepoxy"
+      ],
+      "supports": "!(android | emscripten)"
+    },
+    "bidi": {
+      "description": "Add proper support for bidirectional text (kind of a hack)",
+      "dependencies": [
+        "libraqm"
+      ],
+      "supports": "!emscripten"
+    }
+  },
+  "default-features": ["nonwasm", "glew", "bidi"]
+}

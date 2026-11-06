@@ -1,0 +1,226 @@
+#  SuperTux
+#  Copyright (C) 2020-2021 Jacob Burroughs <maths22@gmail.com>
+#                2020-2022 A. Semphris <semphris@protonmail.com>
+#
+#  This program is free software: you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation, either version 3 of the License, or
+#  (at your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+name: MacOS
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+    tags:
+      - '*'
+  pull_request: {}
+
+jobs:
+  macos:
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-15]
+        build_type: [Debug, Release]
+        arch: [arm64, x86_64]
+        include:
+          - os: macos-15
+            build_type: Release
+            arch: arm64
+            release: ON
+          - os: macos-15
+            build_type: Release
+            arch: x86_64
+            release: ON
+
+    runs-on: ${{ matrix.os }}
+    env:
+      VCPKG_ROOT: ${{ github.workspace }}/vcpkg
+      VCPKG_BINARY_SOURCES: "clear;files,${{ github.workspace }}/vcpkg-binary-cache,readwrite"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Fetch the whole tree so git describe works
+          fetch-depth: 0
+          submodules: recursive
+
+      - name: Restore vcpkg binaries
+        id: vcpkg-cache
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ github.workspace }}/vcpkg-binary-cache
+          key: vcpkg-binary-v1-macos-${{ runner.os }}-${{ runner.arch }}-${{ matrix.arch }}-${{ github.run_id }}-${{ github.run_attempt }}-${{ matrix.build_type }}
+          restore-keys: |
+            vcpkg-binary-v1-macos-${{ runner.os }}-${{ runner.arch }}-${{ matrix.arch }}-
+
+      - name: Install macos dependencies
+        env:
+          BUILD_ARCH: ${{ matrix.arch }}
+        run: |
+          brew install rename
+
+          if [ "$BUILD_ARCH" = "x86_64" ]; then
+            export VCPKG_TRIPLET=x64-osx
+          else
+            export VCPKG_TRIPLET=arm64-osx
+          fi
+          echo "VCPKG_TRIPLET=$VCPKG_TRIPLET" >> $GITHUB_ENV
+          echo "VCPKG_ROOT=$VCPKG_ROOT" >> $GITHUB_ENV
+
+          mkdir -p "$GITHUB_WORKSPACE/vcpkg-binary-cache"
+          git clone https://github.com/microsoft/vcpkg.git "$VCPKG_ROOT"
+          cd "$VCPKG_ROOT"
+
+          ./bootstrap-vcpkg.sh
+
+          ./vcpkg install --classic --triplet=$VCPKG_TRIPLET \
+            fmt    \
+            glew    \
+            libogg   \
+            libvorbis \
+            libraqm    \
+            freetype    \
+            physfs      \
+            glm         \
+            libpng      \
+            zlib        \
+            sdl3        \
+            sdl3-image[jpeg,png]  \
+            sdl3-ttf    \
+            curl        \
+            openal-soft \
+            libogg      \
+            libvorbis
+
+      - name: Save vcpkg binaries
+        if: ${{ always() && steps.vcpkg-cache.outputs.cache-primary-key != '' }}
+        uses: actions/cache/save@v4
+        with:
+          path: ${{ github.workspace }}/vcpkg-binary-cache
+          key: ${{ steps.vcpkg-cache.outputs.cache-primary-key }}
+
+      - name: Set compiler
+        run: |
+          # This ensures for now we use clang11
+          # Clang12 runs into a bunch of fun with `include location
+          # '/usr/local/include' is unsafe for cross-compilation` that we don't
+          # care about for now
+          echo "CXX=clang++" >> $GITHUB_ENV
+          echo "CC=clang" >> $GITHUB_ENV
+
+      - name: Run slugify
+        id: slugify
+        uses: eltimn/slugify-action@v2.0.2
+
+      - name: Configure build
+        env:
+          # Using git rev-parse gives incorrect values when querying the branch
+          # so, use slugify instead
+          GIT_HASH: ${{ steps.slugify.outputs.sha }}
+          GIT_BRANCH: ${{ steps.slugify.outputs.branch }}
+          BUILD_TYPE: ${{ matrix.build_type }}
+          BUILD_ARCH: ${{ matrix.arch }}
+        run: |
+          GIT_TAG="$(git describe --tags --abbrev=0 --always)"
+
+          echo "Git information:"
+          echo "- GIT_TAG: $GIT_TAG"
+          echo "- GIT_HASH: $GIT_HASH"
+          echo "- GIT_BRANCH: $GIT_BRANCH"
+          echo "- BUILD_ARCH: $BUILD_ARCH"
+
+          cmake --version
+          $CXX --version
+
+          mkdir "build"
+          cd "build"
+
+          # Set architecture-specific flags
+          CMAKE_ARCH_FLAGS="-DCMAKE_OSX_ARCHITECTURES=$BUILD_ARCH -DCMAKE_TOOLCHAIN_FILE=$VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake -DVCPKG_TARGET_TRIPLET=$VCPKG_TRIPLET"
+          if [ "$BUILD_ARCH" = "x86_64" ]; then
+            CMAKE_ARCH_FLAGS="$CMAKE_ARCH_FLAGS -DCMAKE_OSX_DEPLOYMENT_TARGET=12.0"
+          fi
+
+          cmake .. -DCMAKE_BUILD_TYPE=$BUILD_TYPE $CMAKE_ARCH_FLAGS             \
+                   -DGIT_HASH="$GIT_HASH" -DGIT_BRANCH="$GIT_BRANCH"            \
+                   -DCMAKE_INSTALL_PREFIX=/usr -DINSTALL_SUBDIR_BIN=bin         \
+                   -DINSTALL_SUBDIR_SHARE=share/supertux2                       \
+                   -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
+      - name: Build and install
+        working-directory: build
+        run: |
+          make -j3 VERBOSE=1
+          make install DESTDIR="/tmp/supertux" VERBOSE=1
+
+      #- name: Run tests
+      #  working-directory: build
+      #  run: ./test_supertux2
+
+      - name: Package
+        env:
+          OS_NAME: ${{ matrix.os }}
+          ARCH: 64
+          COMPILER_NAME: ${{ matrix.compiler }}
+          BUILD_NAME: ${{ matrix.build_type }}
+          PACKAGE: 'ON'
+        working-directory: build
+        run: ../.ci_scripts/package.sh
+
+      - uses: actions/upload-artifact@v4
+        if: matrix.build_type != 'Debug'
+        with:
+          name: "${{ matrix.os }}-${{ matrix.arch }}-${{ matrix.build_type }}-${{ steps.slugify.outputs.branch }}-${{ steps.slugify.outputs.sha }}-dmg"
+          path: build/upload/*.dmg
+          if-no-files-found: ignore
+
+      - uses: parth-paradkar/upload-s3-without-acl@68848b62953464adb87bd48793f7ec58b8af427c
+        if: matrix.release && env.CI_KEY != null
+        env:
+          CI_KEY: ${{ secrets.CI_DOWNLOAD_ACCESS_KEY_ID }}
+        with:
+          aws_bucket: supertux-ci-downloads
+          aws_key_id: ${{ secrets.CI_DOWNLOAD_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.CI_DOWNLOAD_SECRET_ACCESS_KEY }}
+          source_dir: 'build/upload'
+          destination_dir: "ci-build/${{ github.sha }}/gh-actions/${{ matrix.os }}-${{ matrix.arch }}/${{ github.run_id }}"
+
+      - name: Post uploaded file
+        if: matrix.release && env.DOWNLOAD_APIKEY != null
+        working-directory: build
+        run: ../.ci_scripts/deploy.sh
+        env:
+          PREFIX: "ci-build/${{ github.sha }}/gh-actions/${{ matrix.os }}-${{ matrix.arch }}/${{ github.run_id }}"
+          DOWNLOAD_APIKEY: ${{ secrets.DOWNLOAD_APIKEY }}
+          BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+
+      - name: Prepare Release
+        if: startsWith(github.ref, 'refs/tags/') && matrix.release
+        env:
+          BUILD_ARCH: ${{ matrix.arch }}
+        run: |
+          if [ "$BUILD_ARCH" = "arm64" ]; then
+            rename 's/arm64-Darwin.dmg/Darwin-arm64.dmg/' build/upload/SuperTux-*
+          elif [ "$BUILD_ARCH" = "x86_64" ]; then
+            rename 's/x86_64-Darwin.dmg/Darwin-x86_64.dmg/' build/upload/SuperTux-*
+          fi
+
+      - name: Create Release
+        if: startsWith(github.ref, 'refs/tags/') && matrix.release
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          files: 'build/upload/SuperTux-*'
+          draft: true
